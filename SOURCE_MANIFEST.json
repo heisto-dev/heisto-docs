@@ -1,0 +1,72 @@
+{
+  "generatedAtUtc": "2026-11-06T05:54:54.048Z",
+  "repository": "heisto-docs",
+  "scope": "allowlisted source/public evidence; no original Git history",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 146,
+      "sha256": "9c45ec79cbc90c774902ddd00ef1188669ef93ad33df6ca2658c39cba93d5b94"
+    },
+    {
+      "path": "API.md",
+      "bytes": 3432,
+      "sha256": "4cdb26ce22178474028279cfc338997f6d34a8a709052c41adcdcb6d4d9ae452"
+    },
+    {
+      "path": "ARCHITECTURE.md",
+      "bytes": 2869,
+      "sha256": "43507140fdc1b8b38cf2e7a3c347b1f8922fbf81177d95e16a302b3de1480850"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 516,
+      "sha256": "0fe95abd80d3181e213903d18cbd8baf6ad3fcd4d50db9792afbaa7b0dca9bb4"
+    },
+    {
+      "path": "FLOWS.md",
+      "bytes": 2836,
+      "sha256": "c06e8124674ee9e2d5d832ebed6bb9ed55a1a096853a2ef83916d663e6c49d33"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1076,
+      "sha256": "2b2dc5883591645bbc2b3344315e13c3563d3de26a59757a624567d0e9885a4a"
+    },
+    {
+      "path": "NOTICE",
+      "bytes": 275,
+      "sha256": "36a26f7e3bc712ecaf3c8965dc0d5a523b5c8ac1bbc160c89e6a6097e82507d9"
+    },
+    {
+      "path": "PRIVACY.md",
+      "bytes": 1657,
+      "sha256": "5735a91eac872688790265d4d416b02db693aa69472dc68b892def1479b6c455"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1050,
+      "sha256": "a29b3d61d6470d581f36876a77f0bdb97102450ffa297546727a4e06faa03b6e"
+    },
+    {
+      "path": "REPOSITORIES.md",
+      "bytes": 1261,
+      "sha256": "3304eab48a224ad91206acebc3a6021e0c3e7ef522d2768d7fb62809b7aaf80f"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 734,
+      "sha256": "66cb0d8fb12233dd439055d05c98dff928e231ab57892b66147d6acc21482c2c"
+    },
+    {
+      "path": "SECURITY_AND_TRUST.md",
+      "bytes": 3010,
+      "sha256": "910b0dd6cb904325d10f12402f9b7a014eb589c55bb78b07f6b41810ec53918a"
+    },
+    {
+      "path": "USER_GUIDE.md",
+      "bytes": 1909,
+      "sha256": "4d3a87a8c6a95ac6df17c23ea6646c390616d7f27794ab4674871aa36bbecc96"
+    }
+  ]
+}
