@@ -5,6 +5,8 @@ Official open-source reference for Heisto's real AI red-teaming arena on Solana.
 Website: https://heisto.xyz · Support/security: support@heisto.xyz
 
 ## Contents
+- [Public Guard Checker: use, API and limitations](GUARD_CHECKER.md)
+- [Security readiness and evidence requirements](SECURITY_READINESS.md)
 - [Architecture and trust boundaries](ARCHITECTURE.md)
 - [Application and transaction flows](FLOWS.md)
 - [Public user guide](USER_GUIDE.md)
