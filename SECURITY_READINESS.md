@@ -1,6 +1,6 @@
 # Security readiness and evidence
 
-Last reviewed: **2026-11-13T10:53:22.076Z** (UTC).
+Last reviewed: **2026-11-13T11:43:57.693Z** (UTC).
 This page distinguishes observed evidence from planned work. It is not an audit.
 
 ## Status
@@ -9,7 +9,7 @@ This page distinguishes observed evidence from planned work. It is not an audit.
 | --- | --- | --- |
 | Mainnet receipts and recorded bytecode comparison | Historical evidence published | [Timestamped proof repository](https://github.com/heisto-dev/heisto-mainnet-proof); re-check current chain state before relying on it |
 | Public source-to-Mainnet build comparison | Exact byte-for-byte match at finalized slot 468900010 | [Source commit and matching build](https://github.com/heisto-dev/heisto-contracts/blob/main/REPRODUCIBLE_BUILD.md); [passing CLI run](https://github.com/heisto-dev/heisto-contracts/actions/runs/43411854745) |
-| Explorer/OtterSec verification registry | Not registered; still shows FALSE | Publish authority-signed verification metadata and run independent registry job only after separate transaction approval |
+| Public verifier registry | **Verified** on 2026-11-13 UTC; source and on-chain hashes match | [Live registry](https://verify.osec.io/status/FxqFvpptTRCeKCxCuxt86AJze6v16Vk9M8UZCQ8tJvbi); [proof and receipt](https://github.com/heisto-dev/heisto-contracts/blob/main/REPRODUCIBLE_BUILD.md) |
 | Website security.txt | Missing at review: HTTP 404 | Serve a valid plain-text document at the canonical HTTPS well-known path |
 | Squads multisig upgrade authority | Not established in this review | Verify the actual ProgramData authority and publish the multisig address, members, threshold and authority-transfer receipt |
 | Repository security policies | Present in all five official repositories | Private reports to support@heisto.xyz; [policy](SECURITY.md) |
@@ -20,7 +20,7 @@ This page distinguishes observed evidence from planned work. It is not an audit.
 ## Recommended protocol-assurance sequence
 
 1. Preserve the completed reproducible source-to-deployed-bytecode build;
-   register it with the public verifier separately and publish a discoverable security contact.
+   maintain the completed public verification registration and publish a discoverable security contact.
 2. Review migration to a Squads multisig with separately controlled signers.
 3. Maintain source, build instructions, security policies and trust disclosures.
 4. Publish a read-only Dune dashboard with clearly defined metrics.
@@ -74,3 +74,13 @@ patterns. It is a first filter, not a full defense."
 Do not say "audited", "immutable", "Explorer verified", "multisig secured",
 "guaranteed safe" or "listed" unless the specific claim has current evidence.
 An open pull request means submitted, not accepted.
+
+## Registered build details
+
+The public verifier independently rebuilt the arena program and returned
+`is_verified: true`. One separately approved metadata transaction spent
+0.00280916 SOL (rent plus network fee). No contract upgrade, authority change
+or prize funding was performed. The deployed program remains upgradeable.
+Embedded `security.txt` was not added and is separate from both the website
+contact file and the verified-build registry. Explorer interfaces may cache
+registry status; consult the linked live verifier response.
