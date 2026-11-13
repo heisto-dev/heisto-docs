@@ -1,6 +1,6 @@
 # Security readiness and evidence
 
-Last reviewed: **2026-11-13T07:54:53.331Z** (UTC).
+Last reviewed: **2026-11-13T10:53:22.076Z** (UTC).
 This page distinguishes observed evidence from planned work. It is not an audit.
 
 ## Status
@@ -8,7 +8,8 @@ This page distinguishes observed evidence from planned work. It is not an audit.
 | Item | Status at review | Evidence or completion criterion |
 | --- | --- | --- |
 | Mainnet receipts and recorded bytecode comparison | Historical evidence published | [Timestamped proof repository](https://github.com/heisto-dev/heisto-mainnet-proof); re-check current chain state before relying on it |
-| Independent reproducible verified build | Not established in this review | Rebuild an exact public commit with pinned toolchain, compare deployed bytes and publish independently checkable verification |
+| Public source-to-Mainnet build comparison | Exact byte-for-byte match at finalized slot 468900010 | [Source commit and matching build](https://github.com/heisto-dev/heisto-contracts/blob/main/REPRODUCIBLE_BUILD.md); [passing CLI run](https://github.com/heisto-dev/heisto-contracts/actions/runs/43411854745) |
+| Explorer/OtterSec verification registry | Not registered; still shows FALSE | Publish authority-signed verification metadata and run independent registry job only after separate transaction approval |
 | Website security.txt | Missing at review: HTTP 404 | Serve a valid plain-text document at the canonical HTTPS well-known path |
 | Squads multisig upgrade authority | Not established in this review | Verify the actual ProgramData authority and publish the multisig address, members, threshold and authority-transfer receipt |
 | Repository security policies | Present in all five official repositories | Private reports to support@heisto.xyz; [policy](SECURITY.md) |
@@ -18,8 +19,8 @@ This page distinguishes observed evidence from planned work. It is not an audit.
 
 ## Recommended protocol-assurance sequence
 
-1. Establish an independently reproducible source-to-deployed-bytecode build,
-   and publish a discoverable security contact.
+1. Preserve the completed reproducible source-to-deployed-bytecode build;
+   register it with the public verifier separately and publish a discoverable security contact.
 2. Review migration to a Squads multisig with separately controlled signers.
 3. Maintain source, build instructions, security policies and trust disclosures.
 4. Publish a read-only Dune dashboard with clearly defined metrics.
@@ -70,6 +71,6 @@ excluded failed transactions, refresh times and historical coverage.
 Use: "The Guard Checker is available for testing known prompt-injection
 patterns. It is a first filter, not a full defense."
 
-Do not say "audited", "immutable", "verified source build", "multisig secured",
+Do not say "audited", "immutable", "Explorer verified", "multisig secured",
 "guaranteed safe" or "listed" unless the specific claim has current evidence.
 An open pull request means submitted, not accepted.
