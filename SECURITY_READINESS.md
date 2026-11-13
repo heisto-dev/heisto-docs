@@ -1,6 +1,6 @@
 # Security readiness and evidence
 
-Last reviewed: **2026-11-13T11:43:57.693Z** (UTC).
+Last reviewed: **2026-11-13T12:47:53.382Z** (UTC).
 This page distinguishes observed evidence from planned work. It is not an audit.
 
 ## Status
@@ -8,11 +8,12 @@ This page distinguishes observed evidence from planned work. It is not an audit.
 | Item | Status at review | Evidence or completion criterion |
 | --- | --- | --- |
 | Mainnet receipts and recorded bytecode comparison | Historical evidence published | [Timestamped proof repository](https://github.com/heisto-dev/heisto-mainnet-proof); re-check current chain state before relying on it |
-| Public source-to-Mainnet build comparison | Exact byte-for-byte match at finalized slot 468900010 | [Source commit and matching build](https://github.com/heisto-dev/heisto-contracts/blob/main/REPRODUCIBLE_BUILD.md); [passing CLI run](https://github.com/heisto-dev/heisto-contracts/actions/runs/43411854745) |
+| Public source-to-Mainnet build comparison | Exact rebuilt hash matches current Mainnet release | [Current source, deployment slot and contact upgrade](https://github.com/heisto-dev/heisto-contracts/blob/main/SECURITY_CONTACT_UPGRADE.md) |
 | Public verifier registry | **Verified** on 2026-11-13 UTC; source and on-chain hashes match | [Live registry](https://verify.osec.io/status/FxqFvpptTRCeKCxCuxt86AJze6v16Vk9M8UZCQ8tJvbi); [proof and receipt](https://github.com/heisto-dev/heisto-contracts/blob/main/REPRODUCIBLE_BUILD.md) |
-| Website security.txt | Missing at review: HTTP 404 | Serve a valid plain-text document at the canonical HTTPS well-known path |
+| Website security.txt | Not re-checked during this program upgrade | Separate from the embedded contact; prior review reported HTTP 404 |
 | Squads multisig upgrade authority | Not established in this review | Verify the actual ProgramData authority and publish the multisig address, members, threshold and authority-transfer receipt |
 | Repository security policies | Present in all five official repositories | Private reports to support@heisto.xyz; [policy](SECURITY.md) |
+| Embedded program security.txt | **TRUE** in Solscan; support@heisto.xyz embedded | [Verified contact upgrade](https://github.com/heisto-dev/heisto-contracts/blob/main/SECURITY_CONTACT_UPGRADE.md) |
 | Public Dune dashboard | Not established in this review | Publish reproducible queries, program filters, freshness and dashboard URL |
 | Hugging Face Guard Checker | Public release available | [Space](https://huggingface.co/spaces/heisto/guard-checker), [source](https://huggingface.co/spaces/heisto/guard-checker/tree/main) |
 | Community listings | Submission is not acceptance | Maintainer review is required; a listing is not an audit or endorsement |
@@ -77,10 +78,12 @@ An open pull request means submitted, not accepted.
 
 ## Registered build details
 
-The public verifier independently rebuilt the arena program and returned
-`is_verified: true`. One separately approved metadata transaction spent
-0.00280916 SOL (rent plus network fee). No contract upgrade, authority change
-or prize funding was performed. The deployed program remains upgradeable.
-Embedded `security.txt` was not added and is separate from both the website
-contact file and the verified-build registry. Explorer interfaces may cache
-registry status; consult the linked live verifier response.
+The current source commit was independently rebuilt after the approved embedded
+contact upgrade. Solscan displays **Security.txt: TRUE** and
+**Program is verified: VERIFIED**. Net wallet debit was 0.054200197 SOL under
+the approved 0.06 SOL cap; 1.596215962 SOL was refunded, including the temporary
+upload deposit and unused budget. Instruction handlers, dependencies and
+upgrade authority were preserved. No prize accounts were included.
+
+Verified bytecode and embedded reporting contact are not an independent audit.
+[Current source, receipts and reproducible build](https://github.com/heisto-dev/heisto-contracts/blob/main/SECURITY_CONTACT_UPGRADE.md).
